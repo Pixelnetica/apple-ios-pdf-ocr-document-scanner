@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoSliderViewController">
+            <connections>
+                <outlet property="imageView" destination="24" id="50"/>
+                <outlet property="loadButton" destination="23" id="44"/>
+                <outlet property="rotateLeft" destination="zNh-yM-mmt" id="iAf-2d-nbO"/>
+                <outlet property="rotateRight" destination="XAm-mW-HJ4" id="c2v-98-mfN"/>
+                <outlet property="saveButton" destination="39" id="46"/>
+                <outlet property="settingsButton" destination="6H1-RX-pj7" id="pbR-Rl-H1F"/>
+                <outlet property="view" destination="6" id="7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22">
+                    <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="02g-QN-2xC"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Load" id="23">
+                            <connections>
+                                <action selector="loadAction:" destination="-1" id="47"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="69"/>
+                        <barButtonItem title="Settings" id="6H1-RX-pj7">
+                            <connections>
+                                <action selector="settingsAction:" destination="-1" id="VT4-XA-dXs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="KNe-x0-5O5"/>
+                        <barButtonItem title="Save" id="39">
+                            <connections>
+                                <action selector="saveAction:" destination="-1" id="49"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" name="MinAccent"/>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHq-6g-2jW">
+                    <rect key="frame" x="0.0" y="44" width="414" height="52"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doc Scanning SDK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUb-of-Bhi">
+                            <rect key="frame" x="132.66666666666666" y="15.666666666666664" width="148.99999999999997" height="21"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-yM-mmt">
+                            <rect key="frame" x="20" y="12" width="29" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="Cte-nD-Fvi"/>
+                            </constraints>
+                            <color key="tintColor" name="MinAccent"/>
+                            <state key="normal" image="batch_radio_rotate_ccw"/>
+                            <connections>
+                                <action selector="rotateLeft:" destination="-1" eventType="touchUpInside" id="CUK-HD-106"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAm-mW-HJ4">
+                            <rect key="frame" x="365" y="12" width="29" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="wI5-q3-R8D"/>
+                            </constraints>
+                            <color key="tintColor" name="MinAccent"/>
+                            <state key="normal" image="batch_radio_rotate_cw"/>
+                            <connections>
+                                <action selector="rotateRight:" destination="-1" eventType="touchUpInside" id="gLw-vT-aaL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="XUb-of-Bhi" firstAttribute="centerX" secondItem="tHq-6g-2jW" secondAttribute="centerX" id="0sb-68-qbF"/>
+                        <constraint firstItem="XAm-mW-HJ4" firstAttribute="top" secondItem="tHq-6g-2jW" secondAttribute="top" constant="12" id="4jJ-7k-Chh"/>
+                        <constraint firstItem="zNh-yM-mmt" firstAttribute="top" secondItem="tHq-6g-2jW" secondAttribute="top" constant="12" id="E7d-Tg-36p"/>
+                        <constraint firstItem="XUb-of-Bhi" firstAttribute="centerY" secondItem="tHq-6g-2jW" secondAttribute="centerY" id="H90-vY-nGo"/>
+                        <constraint firstAttribute="height" constant="52" id="TwJ-Mc-uvE"/>
+                        <constraint firstAttribute="trailing" secondItem="XAm-mW-HJ4" secondAttribute="trailing" constant="20" id="alb-fR-XUa"/>
+                        <constraint firstItem="zNh-yM-mmt" firstAttribute="leading" secondItem="tHq-6g-2jW" secondAttribute="leading" constant="20" id="pBE-PN-w9K"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="24">
+                    <rect key="frame" x="0.0" y="96" width="414" height="722"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" name="DefaultBackground"/>
+            <constraints>
+                <constraint firstItem="24" firstAttribute="top" secondItem="tHq-6g-2jW" secondAttribute="bottom" id="3tP-1H-ndi"/>
+                <constraint firstItem="22" firstAttribute="bottom" secondItem="GKf-fb-eYY" secondAttribute="bottom" id="I4u-jU-PoH"/>
+                <constraint firstItem="22" firstAttribute="leading" secondItem="GKf-fb-eYY" secondAttribute="leading" id="Okt-Er-ESi"/>
+                <constraint firstItem="tHq-6g-2jW" firstAttribute="top" secondItem="GKf-fb-eYY" secondAttribute="top" id="SQy-OZ-bCL"/>
+                <constraint firstItem="24" firstAttribute="leading" secondItem="GKf-fb-eYY" secondAttribute="leading" id="UEN-Sm-MXI"/>
+                <constraint firstItem="22" firstAttribute="top" secondItem="24" secondAttribute="bottom" id="Y6A-gx-4zx"/>
+                <constraint firstItem="22" firstAttribute="trailing" secondItem="GKf-fb-eYY" secondAttribute="trailing" id="cSl-sJ-RXY"/>
+                <constraint firstItem="tHq-6g-2jW" firstAttribute="leading" secondItem="GKf-fb-eYY" secondAttribute="leading" id="dk7-wV-dfs"/>
+                <constraint firstItem="24" firstAttribute="trailing" secondItem="GKf-fb-eYY" secondAttribute="trailing" id="qFt-EI-LSK"/>
+                <constraint firstItem="tHq-6g-2jW" firstAttribute="trailing" secondItem="GKf-fb-eYY" secondAttribute="trailing" id="qMn-Ct-mfV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="GKf-fb-eYY"/>
+            <point key="canvasLocation" x="318.84057971014494" y="446.65178571428567"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="batch_radio_rotate_ccw" width="29" height="29"/>
+        <image name="batch_radio_rotate_cw" width="29" height="29"/>
+        <namedColor name="DefaultBackground">
+            <color white="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="MinAccent">
+            <color red="0.10588235294117647" green="0.33333333333333331" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
