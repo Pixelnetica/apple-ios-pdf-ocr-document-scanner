@@ -22,7 +22,7 @@ To learm more about how to use EasyScan please refer to [__Brief User Guide__](h
 
 ## License
 
-By default application source code bundled with _demo license_ which puts watermarks on resulted images. 
+By default application source code bundled with _trial license_ which puts watermarks on resulted images. 
 To get full featured _Free demo license_ please please [__contact us__](https://www.pixelnetica.com/products/document-scanning-sdk/sdk-support.html "Request information or Free demo DSSDK license").
 
 It is strictly prohibited to distribute, market, publish to application stores like, but not limited, AppStore, Google Play, etc or use other than for development, staging or testing purposes Pixelnetica DSSDK trial or demo licenses.
