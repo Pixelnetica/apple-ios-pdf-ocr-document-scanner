@@ -18,7 +18,7 @@ The documentation for DSSDK iOS version can be found by the link below:
 
 📖 [Pixelnetica Document Scanning SDK for Apple iOS documentation](https://pixelnetica.github.io/Document-Scanning-SDK-Documentation/Apple-iOS/ "Document Scanning SDK for Apple iOS Documentation")
 
-To learm more about how to use EasyScan please refer to [__Brief User Guide__](https://pixelnetica.github.io/Document-Scanning-SDK-Documentation/Apple-iOS/demoapp-guide.html "EasyScan brief Users guide").
+To learn more about how to use EasyScan please refer to [__Brief User Guide__](https://pixelnetica.github.io/Document-Scanning-SDK-Documentation/Apple-iOS/demoapp-guide.html "EasyScan brief Users guide").
 
 ## License
 
