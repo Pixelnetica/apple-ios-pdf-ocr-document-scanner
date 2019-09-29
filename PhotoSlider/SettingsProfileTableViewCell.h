@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsProfileTableViewCell : UITableViewCell
-- (void) confifureCell:(UIImage*) image andText:(NSString*) text;
+- (void) configureCell:(NSString*) text;
+- (void) configureCell:(UIImage*) image andText:(NSString*) text;
 @end

@@ -16,7 +16,7 @@ typedef enum {
 	PxLicenseStatus_None = -1,
 	/// The license is active
 	PxLicenseStatus_Active,
-	/// Malformed or corrupted license key
+	/// Malformed or corrupt license key
 	PxLicenseStatus_Malformed_Key,
 	/// The license cannot be used with this application
 	PxLicenseStatus_AppID_Mismatch,

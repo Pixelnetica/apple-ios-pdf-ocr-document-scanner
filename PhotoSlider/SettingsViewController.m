@@ -129,16 +129,16 @@ static NSString *textcell = @"textSettingsProfileCell";
          }
 
          if(indexPath.row == 0) {
-             [cell_ confifureCell:[UIImage imageNamed:@"profile_button_original"] andText:@"Original"];
+             [cell_ configureCell:[UIImage imageNamed:@"profile_button_original"] andText:@"Original"];
          }
          else if(indexPath.row == 1) {
-             [cell_ confifureCell:[UIImage imageNamed:@"profile_button_bw"] andText:@"Black & White"];
+             [cell_ configureCell:[UIImage imageNamed:@"profile_button_bw"] andText:@"Black & White"];
          }
          else if(indexPath.row == 2) {
-             [cell_ confifureCell:[UIImage imageNamed:@"profile_button_gray"] andText:@"Gray"];
+             [cell_ configureCell:[UIImage imageNamed:@"profile_button_gray"] andText:@"Gray"];
          }
          else if(indexPath.row == 3) {
-             [cell_ confifureCell:[UIImage imageNamed:@"profile_button_color"] andText:@"Color"];
+             [cell_ configureCell:[UIImage imageNamed:@"profile_button_color"] andText:@"Color"];
              
          }
          return cell_;
@@ -181,31 +181,31 @@ static NSString *textcell = @"textSettingsProfileCell";
 		 {
 			 case 0:
 			 {
-				 [cell_ confifureCell:[UIImage imageNamed:@"save_format_button_pdf"] andText:@"PDF"];
+				 [cell_ configureCell:[UIImage imageNamed:@"save_format_button_pdf"] andText:@"PDF"];
 				 break;
 			 }
 
 			 case 1:
 			 {
-				 [cell_ confifureCell:[UIImage imageNamed:@"save_format_button_pdf_from_png"] andText:@"PDF from PNG"];
+				 [cell_ configureCell:[UIImage imageNamed:@"save_format_button_pdf_from_png"] andText:@"PDF from PNG"];
 				 break;
 			 }
 
 			 case 2:
 			 {
-				 [cell_ confifureCell:[UIImage imageNamed:@"save_format_button_tiff"] andText:@"TIFF G4"];
+				 [cell_ configureCell:[UIImage imageNamed:@"save_format_button_tiff"] andText:@"TIFF G4"];
 				 break;
 			 }
 
 			 case 3:
 			 {
-				 [cell_ confifureCell:[UIImage imageNamed:@"save_format_button_png"] andText:@"PNG"];
+				 [cell_ configureCell:[UIImage imageNamed:@"save_format_button_png"] andText:@"PNG"];
 				 break;
 			 }
 
 			 case 4:
 			 {
-				 [cell_ confifureCell:[UIImage imageNamed:@"save_format_button_jpg"] andText:@"JPG"];
+				 [cell_ configureCell:[UIImage imageNamed:@"save_format_button_jpg"] andText:@"JPG"];
 				 break;
 			 }
 		 }
@@ -220,7 +220,8 @@ static NSString *textcell = @"textSettingsProfileCell";
 	 } else if (indexPath.section == 6) {
 		 cell_ = [tableView dequeueReusableCellWithIdentifier:identifier_ forIndexPath:indexPath];
 
-		 [cell_ confifureCell:[UIImage imageNamed:@""] andText:@"About product"];
+		 [cell_ configureCell:@"About product"];
+
 		 cell_.accessoryType = UITableViewCellAccessoryNone;
 
 		 return cell_;
@@ -286,6 +287,8 @@ static NSString *textcell = @"textSettingsProfileCell";
 		case 6:
 		{
 			AboutViewController* vc = [AboutViewController new];
+
+			vc.modalPresentationStyle = UIModalPresentationFullScreen;
 
 			[self presentViewController:vc animated:YES completion:nil];
 

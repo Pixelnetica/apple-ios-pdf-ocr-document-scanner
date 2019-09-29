@@ -19,6 +19,7 @@
 
 #import <AssetsLibrary/ALAsset.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
+#import <Photos/Photos.h>
 #import <ImageIO/CGImageSource.h>
 #import <ImageIO/CGImageProperties.h>
 #import "UIAlertController+Blocks.h"
@@ -213,6 +214,46 @@ int rotationAngle;
 - (IBAction)loadAction:(id)sender
 {
     @weakify(self)
+
+	UIAlertController* actionSheet = [UIAlertController
+									  alertControllerWithTitle:@"Please, select image source"
+									  message:nil
+									  preferredStyle:UIAlertControllerStyleActionSheet
+									  ];
+
+	[actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+		@strongify(self)
+		[self dismissViewControllerAnimated:YES completion:nil];
+	}]];
+
+	[actionSheet addAction:[UIAlertAction actionWithTitle:@"Photo album" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+		@strongify(self)
+		[self dismissViewControllerAnimated:YES completion:^{
+			if( PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized )
+				[self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+			else
+			{
+				[PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+					dispatch_async( dispatch_get_main_queue(), ^{
+						if( status != PHAuthorizationStatusAuthorized )
+							[Error Alert:self title:@"Error" message:@"access to photo library is denied!"];
+						else
+							[self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+					});
+				}];
+			}
+		}];
+	}]];
+
+	[actionSheet addAction:[UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+		@strongify(self)
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self openCameraView];
+		}];
+	}]];
+
+	[self presentViewController:actionSheet animated:YES completion:nil];
+/*
     [UIActionSheet showInView:self.view
                     withTitle:@"Please, select image source"
             cancelButtonTitle:@"Cancel"
@@ -239,11 +280,13 @@ int rotationAngle;
                              }
                         }
                      }];
+ */
 }
 
 - (void) openCameraView {
-//	CameraViewController *vc = [[CameraViewController alloc] initWithSdk:sdk];
 	CameraViewController *vc = [CameraViewController new];
+
+	vc.modalPresentationStyle = UIModalPresentationFullScreen;
 
     [self presentViewController:vc animated:YES completion:NULL];
     @weakify(vc)
@@ -456,41 +499,84 @@ int rotationAngle;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    @weakify(self)
-    //UIImage *img;// = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSLog(@"");
-//got selected image
-    void (^LoadPhotoBlock)(NSDictionary *metadata, UIImage *image) = ^(NSDictionary *metadata, UIImage *image) {
-        @strongify(self)
-        [self dismissViewControllerAnimated:YES completion:^(void){
-            [self loadPhoto:image withMetadata:metadata];
-            [self selectCropArea]; //try to get crop
-        }];
-    };
+	NSLog(@"");
 
-	NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-    if (assetURL)
-    {
-        ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
-        {
-            NSDictionary *metadata = myasset.defaultRepresentation.metadata;
-            UIImage *image = [UIImage imageWithCGImage:myasset.defaultRepresentation.fullResolutionImage];
-            LoadPhotoBlock(metadata, image);
-        };
-        ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
-        {
-            NSLog(@"cant get image - %@", [myerror localizedDescription]);
-            LoadPhotoBlock(nil, nil);
-        };
-        ALAssetsLibrary *assetsLib = [[ALAssetsLibrary alloc] init];
-        [assetsLib assetForURL:assetURL resultBlock:resultblock failureBlock:failureblock];
-    }
-    
-/*
-    [self loadPhoto:img];
-    [self dismissViewControllerAnimated:YES completion:^(void){
-        [self selectCropArea]; }];
- */
+	@weakify(self)
+
+	void (^LoadPhotoBlock)(NSDictionary *metadata, UIImage *image) = ^(NSDictionary *metadata, UIImage *image) {
+		@strongify(self)
+
+		[self dismissViewControllerAnimated:YES completion:^(void){
+			[self loadPhoto:image withMetadata:metadata];
+			[self selectCropArea]; //try to get crop
+		}];
+	};
+
+	do {
+		if( @available( iOS 11, * ) )
+		{
+			PHAsset* asset = [info objectForKey:UIImagePickerControllerPHAsset];
+			if( asset == nil )
+			{
+				[Error Alert:self title:@"Error" message:@"cannot open image!"];
+				break;
+			}
+
+			[PHImageManager.defaultManager requestImageDataForAsset:asset options:nil resultHandler:^(NSData* _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary* _Nullable info) {
+				//UIImage* image = [UIImage imageWithData:imageData scale:[UIScreen mainScreen].scale];
+				UIImage* image = [UIImage imageWithData:imageData];
+
+				NSDictionary* metadata = [PhotoSliderViewController metadataFromImageData:imageData];
+
+				LoadPhotoBlock(metadata, image);
+			}];
+
+			break;
+		}
+
+		NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+		if (assetURL)
+		{
+			ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+			{
+				NSDictionary *metadata = myasset.defaultRepresentation.metadata;
+				UIImage *image = [UIImage imageWithCGImage:myasset.defaultRepresentation.fullResolutionImage];
+				LoadPhotoBlock(metadata, image);
+			};
+			ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *myerror)
+			{
+				NSLog(@"cant get image - %@", [myerror localizedDescription]);
+				LoadPhotoBlock(nil, nil);
+			};
+			ALAssetsLibrary *assetsLib = [[ALAssetsLibrary alloc] init];
+			[assetsLib assetForURL:assetURL resultBlock:resultblock failureBlock:failureblock];
+		}
+	} while( false );
+}
+
++ (NSDictionary*)metadataFromImageData:(NSData*)imageData
+{
+	CGImageSourceRef imageSource = CGImageSourceCreateWithData( (__bridge CFDataRef)(imageData), nil );
+	if( imageSource )
+	{
+		NSDictionary *options = @{(NSString *)kCGImageSourceShouldCache : [NSNumber numberWithBool:NO]};
+		CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex( imageSource, 0, (__bridge CFDictionaryRef)options );
+
+		CFRelease( imageSource );
+
+		if( imageProperties )
+		{
+			NSDictionary *metadata = (__bridge NSDictionary*)imageProperties;
+
+			CFRelease( imageProperties );
+
+			return metadata;
+		}
+	}
+
+	NSLog( @"Can't get image metadata" );
+
+	return nil;
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -537,6 +623,7 @@ int rotationAngle;
 		PxToCGPointRect(points, cg_points);
         PageEditorController *pageEditor = [PageEditorController createWith:self.inpImage.image points:cg_points];
         pageEditor.delegate = self;
+		pageEditor.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:pageEditor animated:NO completion:NULL];
     } else if([defaults boolForKey:@"cropState"] && smartCrop) {
         [self process];

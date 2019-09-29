@@ -15,10 +15,14 @@
 
 @implementation SettingsProfileTableViewCell
 - (void)awakeFromNib {
+	[super awakeFromNib];
     // Initialization code
 }
+- (void) configureCell:(NSString*) text {
+    self.profileLabel.text = text;
+}
 
-- (void) confifureCell:(UIImage*) image andText:(NSString*) text {
+- (void) configureCell:(UIImage*) image andText:(NSString*) text {
     //self.iconView.image = image;
     self.profileLabel.text = text;
 }

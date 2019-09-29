@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A05697B226E2BFB00321219 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A05697A226E2BFA00321219 /* license.txt */; };
 		194B665C1F64E8280011D622 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 194B665B1F64E8280011D622 /* Error.m */; };
+		19572E52233ABB8E00C75283 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19572E51233ABB8E00C75283 /* Photos.framework */; };
 		3B0A2E251DB78669007BAE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A2E241DB78669007BAE9A /* Assets.xcassets */; };
 		3B0B275B1C21B4AD00EF69BD /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B275A1C21B4AD00EF69BD /* CameraView.m */; };
 		3B0B275E1C21B61C00EF69BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0B275C1C21B61B00EF69BD /* AVFoundation.framework */; };
@@ -115,6 +116,7 @@
 		194B665A1F64E8050011D622 /* Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
 		194B665B1F64E8280011D622 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error.m; sourceTree = "<group>"; };
 		194B665D1F64F1A40011D622 /* Example-DocScanningSDK-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Example-DocScanningSDK-iOS.entitlements"; sourceTree = "<group>"; };
+		19572E51233ABB8E00C75283 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		3B0A2E241DB78669007BAE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = pictures/Assets.xcassets; sourceTree = "<group>"; };
 		3B0B27591C21B4AD00EF69BD /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		3B0B275A1C21B4AD00EF69BD /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				3B5E98971C204D3400CD8ECD /* CoreImage.framework in Frameworks */,
 				3B648F3E1C1F0B7E0074B932 /* Security.framework in Frameworks */,
 				CE36AE011902E57E001A89CE /* AssetsLibrary.framework in Frameworks */,
+				19572E52233ABB8E00C75283 /* Photos.framework in Frameworks */,
 				CE36ADFE1902E1AE001A89CE /* ImageIO.framework in Frameworks */,
 				CE4CA001134DE0CC004485B0 /* UIKit.framework in Frameworks */,
 				CE4CA003134DE0CC004485B0 /* Foundation.framework in Frameworks */,
@@ -413,6 +416,7 @@
 		CE4C9FFF134DE0CC004485B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19572E51233ABB8E00C75283 /* Photos.framework */,
 				3B350CC71C22FF8A000E6DE6 /* MobileCoreServices.framework */,
 				3B0B27641C21BA3400EF69BD /* CoreMedia.framework */,
 				3B0B27621C21B6AE00EF69BD /* CoreVideo.framework */,
@@ -915,6 +919,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4XL92P45YN;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -928,6 +933,7 @@
 				INFOPLIST_FILE = "PhotoSlider/Example-DocScanningSDK-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -955,6 +961,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4XL92P45YN;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -967,6 +974,7 @@
 				INFOPLIST_FILE = "PhotoSlider/Example-DocScanningSDK-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
