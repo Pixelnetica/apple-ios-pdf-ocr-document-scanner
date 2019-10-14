@@ -17,6 +17,7 @@
                 <outlet property="rotateRight" destination="XAm-mW-HJ4" id="c2v-98-mfN"/>
                 <outlet property="saveButton" destination="39" id="46"/>
                 <outlet property="settingsButton" destination="6H1-RX-pj7" id="pbR-Rl-H1F"/>
+                <outlet property="toolBar" destination="22" id="MfB-VY-iPU"/>
                 <outlet property="view" destination="6" id="7"/>
             </connections>
         </placeholder>

@@ -221,6 +221,9 @@ int rotationAngle;
 									  preferredStyle:UIAlertControllerStyleActionSheet
 									  ];
 
+	actionSheet.popoverPresentationController.barButtonItem = self.loadButton;
+//	actionSheet.popoverPresentationController.sourceView = self.toolBar;
+
 	[actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
 		@strongify(self)
 		[self dismissViewControllerAnimated:YES completion:nil];

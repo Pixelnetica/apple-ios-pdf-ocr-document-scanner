@@ -22,6 +22,7 @@
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *settingsButton;
 @property (nonatomic, weak) IBOutlet UIButton *rotateLeft;
 @property (nonatomic, weak) IBOutlet UIButton *rotateRight;
+@property (nonatomic, weak) IBOutlet UIView *toolBar;
 @property (nonatomic, strong) PxMetaImage* inpImage;
 @property (nonatomic, strong) PxMetaImage* outImage;
 
