@@ -80,7 +80,7 @@
 		E3CCCB9F1FE706BE00765C06 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CCCB961FE706BE00765C06 /* EXTRuntimeExtensions.m */; };
 		E3CCCBA01FE706BE00765C06 /* NSMethodSignature+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CCCB971FE706BE00765C06 /* NSMethodSignature+EXT.m */; };
 		E3D741B5213C176B005F491F /* DocScanningSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D741B4213C176B005F491F /* DocScanningSDK.framework */; };
-		E3D741B6213C176B005F491F /* DocScanningSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3D741B4213C176B005F491F /* DocScanningSDK.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3D741B6213C176B005F491F /* DocScanningSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3D741B4213C176B005F491F /* DocScanningSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E3F03CEB1FE63C5800F20099 /* WebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F03CEA1FE63C3D00F20099 /* WebViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -933,7 +933,7 @@
 				INFOPLIST_FILE = "PhotoSlider/Example-DocScanningSDK-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.4.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -974,7 +974,7 @@
 				INFOPLIST_FILE = "PhotoSlider/Example-DocScanningSDK-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.4.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
