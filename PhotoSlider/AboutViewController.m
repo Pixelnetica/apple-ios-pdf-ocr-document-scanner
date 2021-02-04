@@ -76,7 +76,7 @@
 	 @"<p>Pixelnetica Document Scanning SDK"
 	 @"<p>Version %@"
 	 @"<p>For more information, visit"
-	 @"<p><a target=\"_blank\" href=\"https://www.pixelnetica.com/products/document-scanning-sdk/document-scanner-sdk.html\">Document Scanning SDK page</a>"
+	 @"<p><a target=\"_blank\" href=\"https://www.pixelnetica.com/products/document-scanning-sdk/document-scanner-sdk.html?utm_source=EasyScan&utm_medium=app-ios&utm_campaign=scr-about&utm_content=dssdk-overview\">Document Scanning SDK page</a>"
 	 @"<p>© Pixelnetica %d"
 	 @"<p>"
 	 @"</div>"
