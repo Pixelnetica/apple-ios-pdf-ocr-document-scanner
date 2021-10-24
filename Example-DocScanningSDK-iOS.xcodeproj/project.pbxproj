@@ -32,7 +32,7 @@
 		3B99E69F1C21946000516D7D /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B99E69E1C21946000516D7D /* UIActionSheet+Blocks.m */; };
 		3B99E6A31C21AA4D00516D7D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B99E6A11C21AA4D00516D7D /* CameraViewController.m */; };
 		3B99E6A41C21AA4D00516D7D /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B99E6A21C21AA4D00516D7D /* CameraViewController.xib */; };
-		3BA0AC5E1C2C155D00B8B8AE /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0AC5D1C2C155D00B8B8AE /* OverlayView.m */; };
+		3BA0AC5E1C2C155D00B8B8AE /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0AC5D1C2C155D00B8B8AE /* CameraOverlayView.m */; };
 		3BBC3F701DB691C100B53B11 /* TextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBC3F6E1DB691C100B53B11 /* TextTableViewCell.m */; };
 		3BBC3F711DB691C100B53B11 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBC3F6F1DB691C100B53B11 /* TextTableViewCell.xib */; };
 		9B40D1691DB6C78D00BC556C /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40D1471DB6C78D00BC556C /* IQNSArray+Sort.m */; };
@@ -147,8 +147,8 @@
 		3B99E6A01C21AA4D00516D7D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		3B99E6A11C21AA4D00516D7D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		3B99E6A21C21AA4D00516D7D /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
-		3BA0AC5C1C2C155D00B8B8AE /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
-		3BA0AC5D1C2C155D00B8B8AE /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		3BA0AC5C1C2C155D00B8B8AE /* CameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayView.h; sourceTree = "<group>"; };
+		3BA0AC5D1C2C155D00B8B8AE /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayView.m; sourceTree = "<group>"; };
 		3BBC3F6D1DB691C100B53B11 /* TextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewCell.h; sourceTree = "<group>"; };
 		3BBC3F6E1DB691C100B53B11 /* TextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewCell.m; sourceTree = "<group>"; };
 		3BBC3F6F1DB691C100B53B11 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
@@ -461,8 +461,8 @@
 				CE4CA012134DE0CC004485B0 /* MainWindow.xib */,
 				CEF7A5291671D122007D93F2 /* MyImageView.h */,
 				CEF7A52A1671D122007D93F2 /* MyImageView.m */,
-				3BA0AC5C1C2C155D00B8B8AE /* OverlayView.h */,
-				3BA0AC5D1C2C155D00B8B8AE /* OverlayView.m */,
+				3BA0AC5C1C2C155D00B8B8AE /* CameraOverlayView.h */,
+				3BA0AC5D1C2C155D00B8B8AE /* CameraOverlayView.m */,
 				CEF7A5121671CE0B007D93F2 /* PageEditorController.h */,
 				CEF7A5131671CE0B007D93F2 /* PageEditorController.m */,
 				CEF7A5141671CE0B007D93F2 /* PageEditorController.xib */,
@@ -719,7 +719,7 @@
 				9B40D16C1DB6C78D00BC556C /* IQUIView+Hierarchy.m in Sources */,
 				CEF7A52B1671D122007D93F2 /* MyImageView.m in Sources */,
 				3B99E69F1C21946000516D7D /* UIActionSheet+Blocks.m in Sources */,
-				3BA0AC5E1C2C155D00B8B8AE /* OverlayView.m in Sources */,
+				3BA0AC5E1C2C155D00B8B8AE /* CameraOverlayView.m in Sources */,
 				9B40D16E1DB6C78D00BC556C /* IQUIWindow+Hierarchy.m in Sources */,
 				E3F03CEB1FE63C5800F20099 /* WebViewDelegate.m in Sources */,
 				3BBC3F701DB691C100B53B11 /* TextTableViewCell.m in Sources */,
@@ -919,7 +919,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4XL92P45YN;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -933,7 +933,7 @@
 				INFOPLIST_FILE = "PhotoSlider/Example-DocScanningSDK-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.5.1;
+				MARKETING_VERSION = 2.5.2;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -962,7 +962,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4XL92P45YN;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -975,7 +975,7 @@
 				INFOPLIST_FILE = "PhotoSlider/Example-DocScanningSDK-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.5.1;
+				MARKETING_VERSION = 2.5.2;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lstdc++",

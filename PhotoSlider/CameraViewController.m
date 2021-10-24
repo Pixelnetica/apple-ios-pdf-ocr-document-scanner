@@ -8,12 +8,12 @@
 
 #import "CameraViewController.h"
 #import "CameraView.h"
-#import "OverlayView.h"
+#import "CameraOverlayView.h"
 #import "CircularProgressView.h"
 
 @interface CameraViewController () <CameraViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, weak) IBOutlet CameraView *camView;
-@property (nonatomic, weak) IBOutlet OverlayView *overlayView;
+@property (nonatomic, weak) IBOutlet CameraOverlayView *overlayView;
 @property (nonatomic, weak) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (nonatomic, weak) IBOutlet UILabel *label;
 @property (nonatomic, weak) IBOutlet UILabel *labelForDocArea;
