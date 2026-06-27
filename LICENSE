@@ -1,0 +1,17 @@
+Copyright © 2012–2026 Pixelnetica™.
+
+EasyScanner sample application for the Pixelnetica Document Scanning SDK.
+
+This software is provided as SAMPLE CODE. You may use, modify, and incorporate
+it, in whole or in part, into applications that integrate the Pixelnetica
+Document Scanning SDK. You may not redistribute it as a standalone product.
+
+THE SAMPLE CODE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SAMPLE CODE OR ITS USE.
+
+The Pixelnetica Document Scanning SDK itself is commercial software, licensed
+separately and not covered by this notice. See https://www.pixelnetica.com for
+licensing terms.

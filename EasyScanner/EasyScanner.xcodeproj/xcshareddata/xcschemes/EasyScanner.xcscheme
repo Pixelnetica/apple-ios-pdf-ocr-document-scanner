@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Scheme LastUpgradeVersion='1410' version='1.7'>
+   <BuildAction buildImplicitDependencies='YES' parallelizeBuildables='YES'>
+      <BuildActionEntries>
+         <BuildActionEntry buildForAnalyzing='YES' buildForArchiving='YES' buildForProfiling='YES' buildForRunning='YES' buildForTesting='YES'>
+            <BuildableReference BlueprintIdentifier='19D5535A285EA09600046580' BlueprintName='EasyScanner' BuildableIdentifier='primary' BuildableName='EasyScanner.app' ReferencedContainer='container:EasyScanner.xcodeproj'>
+            </BuildableReference>
+         </BuildActionEntry>
+         
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction buildConfiguration='Debug' selectedDebuggerIdentifier='Xcode.DebuggerFoundation.Debugger.LLDB' selectedLauncherIdentifier='Xcode.DebuggerFoundation.Launcher.LLDB' shouldUseLaunchSchemeArgsEnv='YES'>
+      <TestPlans>
+         
+         
+         
+         
+      </TestPlans>
+      <Testables>
+         
+      </Testables>
+   </TestAction>
+   <LaunchAction allowLocationSimulation='YES' buildConfiguration='Release' debugDocumentVersioning='YES' debugServiceExtension='internal' ignoresPersistentStateOnLaunch='NO' launchStyle='0' selectedDebuggerIdentifier='Xcode.DebuggerFoundation.Debugger.LLDB' selectedLauncherIdentifier='Xcode.DebuggerFoundation.Launcher.LLDB' useCustomWorkingDirectory='NO'>
+      <BuildableProductRunnable runnableDebuggingMode='0'>
+         <BuildableReference BlueprintIdentifier='19D5535A285EA09600046580' BlueprintName='EasyScanner' BuildableIdentifier='primary' BuildableName='EasyScanner.app' ReferencedContainer='container:EasyScanner.xcodeproj'>
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction buildConfiguration='Release' debugDocumentVersioning='YES' savedToolIdentifier='' shouldUseLaunchSchemeArgsEnv='YES' useCustomWorkingDirectory='NO'>
+      <BuildableProductRunnable runnableDebuggingMode='0'>
+         <BuildableReference BlueprintIdentifier='19D5535A285EA09600046580' BlueprintName='EasyScanner' BuildableIdentifier='primary' BuildableName='EasyScanner.app' ReferencedContainer='container:EasyScanner.xcodeproj'>
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction buildConfiguration='Debug'>
+   </AnalyzeAction>
+   <ArchiveAction buildConfiguration='Release' revealArchiveInOrganizer='YES'>
+   </ArchiveAction>
+</Scheme>

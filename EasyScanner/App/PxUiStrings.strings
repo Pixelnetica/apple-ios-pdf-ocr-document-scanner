@@ -1,0 +1,3 @@
+/* Demo-side override for the SDK-UI editor no-document-detected banner.
+   Wins over the framework default via the SDK-UI two-stage lookup. */
+"editor-banner-no-document-detected" = "Document not detected. Please position the corners manually.";

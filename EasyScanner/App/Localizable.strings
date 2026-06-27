@@ -1,0 +1,64 @@
+"generic-unknown-error" = "Unknown error";
+
+"alert-ok" = "OK";
+"alert-cancel" = "Cancel";
+"alert-error" = "Error";
+"alert-warning" = "Warning";
+
+"photo-access-denied" = "Access to photo library is deinied";
+"photo-image-load-error" = "Image load error";
+
+"camera-picture-failed" = "Failed to take camera picture!";
+
+"ocr-no-languages-selected" = "No recognition languages selected";
+"ocr-select-languages" = "Select languages";
+"ocr-cannot-download-language" = "Cannot download '%@' language file since output directory is not available";
+"ocr-language-download-error" = "Failed to download '%@' language file: %@";
+"ocr-no-scan-result" = "There is no recognised text for this document. Do you wish to scan document now?";
+"ocr-scan-text" = "Scan text";
+
+"share-unknown-save-format" = "unknown save format chosen: %d";
+"share-open-error" = "Failed to open '%@': %@";
+"share-write-error" = "Failed to write '%@': %@";
+"share-license-blocked" = "License does not permit this save format.";
+"share-no-image" = "No image to share.";
+
+"settings-title" = "Settings";
+"settings-done" = "Done";
+"settings-smart-crop" = "Smart crop";
+"settings-smart-crop-desc" = "Images will be processed automatically. Manual correction will be offered only in case of low quality document border detection";
+"settings-color-profile" = "Color profile";
+"settings-camera" = "Camera settings";
+"settings-camera-border-detector" = "Document borders detector";
+"settings-camera-autoshot" = "AutoShot";
+"settings-camera-autoshot-delay" = "AutoShot delay";
+"settings-camera-shake-detector" = "Shake detector";
+"settings-camera-torch-on" = "Torch on";
+"settings-sharing-format" = "Document sharing format";
+"settings-pdf-compression" = "PDF compression level";
+"settings-compression-lossless" = "Lossless";
+"settings-compression-low" = "Low";
+"settings-compression-medium" = "Medium";
+"settings-compression-high" = "High";
+"settings-compression-extreme" = "Extreme";
+"settings-simulate-multipage" = "Simulate multi-page file";
+"settings-simulate-multipage-desc" = "Single page will be written into the output document. Applicable for PDF and TIFF files only.";
+"settings-ocr-title" = "Recognition languages";
+"settings-ocr-header" = "Optical character recognition";
+"settings-ocr-footer" = "Manage recognition languages.";
+"settings-ocr-detect-text-orientation" = "Try to detect text orientation";
+
+"about-title" = "About EasyScan";
+"about-powered-by" = "Powered by";
+"about-heading" = "Pixelnetica Document Scanning SDK";
+"about-versions" = "Versions";
+"about-sdk-name" = "DSSDK";
+"about-app-name" = "EasyScan";
+"about-more-info" = "For more information, visit";
+"about-website-link" = "Document Scanning SDK page";
+"about-copyright" = "© Pixelnetica %ld";
+
+"profile-original" = "Original";
+"profile-bw" = "Black & White";
+"profile-gray" = "Gray";
+"profile-color" = "Color";
