@@ -55,45 +55,14 @@ struct EasyScannerApp: App {
             UserDefaults.standard.synchronize()
         }
 
-        // When loading a detected-doc fixture under test, force smart-crop OFF so the
-        // editor opens for manual review. With the default smart-crop=true, a
-        // successful detection (isDefined=true) skips the editor entirely.
-        if AppEnvironment.shared.isUITesting && AppEnvironment.shared.loadN14DetectedDocFixture {
-            UserDefaults.standard.set(false, forKey: "cropState")
-            UserDefaults.standard.synchronize()
-        }
 
         initLicense()
 
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
 
-        #if DEBUG
-        PdfReproducer.runIfRequested()
-        #endif
 
-        if AppEnvironment.shared.runN15InvariantHarness {
-            Self.runN15InvariantHarness()
-        }
     }
 
-    /// Bridge regression harness: instantiate a default `PxCutout()` and call
-    /// `getPoints:` into a stack buffer of four `PxPointF`s. The expected result
-    /// is `cnt = 0` — the engine throws on a default-constructed cutout
-    /// (`!isValid()`), and the bridge's `try/catch` in `PxCutout.mm:-getPoints:`
-    /// swallows the throw and returns `0`. The two `AppEnvironment` mirrors record
-    /// the outcome for the test to assert against. Runs whenever
-    /// `--uitesting-n15-invariant-harness` is set, regardless of `--uitesting`,
-    /// because it exercises only the bridge boundary, not the rest of the
-    /// UI-testing scaffolding.
-    private static func runN15InvariantHarness() {
-        let cutout = PxCutout()
-        var pts = Array(repeating: PxPointF(x: 0, y: 0), count: 4)
-        let cnt = pts.withUnsafeMutableBufferPointer { buf -> UInt32 in
-            cutout.getPoints(buf.baseAddress!)
-        }
-        AppEnvironment.shared.n15HarnessGetPointsCount = Int(cnt)
-        AppEnvironment.shared.n15HarnessDidRun = true
-    }
 
     func initSettings() {
         let defaults = UserDefaults.standard

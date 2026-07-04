@@ -173,7 +173,7 @@ final class OCRModel: NSObject, PxLanguageDownloaderDelegate, PxTextReaderDispla
     
     private static func buildSelectedLanguagesString( loadedLanguages: [String], selectedLanguages: Set<String> ) -> String {
         if selectedLanguages.isEmpty {
-            return "Select languages"
+            return "ocr-select-languages".localized
         }
         
         var s = ""

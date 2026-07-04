@@ -41,27 +41,6 @@ final class AppEnvironment: ObservableObject {
     /// dropped during the OCRModel reconcile pass. Comma-separated in the launch arg
     /// (e.g. "--uitesting-preselect-languages eng,rus").
     let preselectLanguages: [String]
-    /// Runs the PDF axis-sweep reproducer on launch and writes a report to
-    /// Documents/test-results/_repro/<wave>/. Debug-build-only and only effective
-    /// when --uitesting is also set; the reproducer itself enforces the DEBUG guard.
-    let runPdfReproducer: Bool
-    /// Bridge regression harness: instantiate a default `PxCutout()`, call `getPoints:`
-    /// into a stack buffer, and surface the result via UITesting mirrors so the test can
-    /// assert that the bridge's `try/catch` in `PxCutout.mm:-getPoints:` swallows the
-    /// engine throw and returns `cnt = 0` without crashing. Read once at launch.
-    let runN15InvariantHarness: Bool
-    /// When set, the app synthesises a plain solid-white 1024x1024 UIImage at startup and
-    /// feeds it through ContentModel as if it came from the photo library. The SDK detector
-    /// returns isDefined=false on a document-free image, which opens the editor with a
-    /// full-image fallback cutout and triggers the no-document banner. Read once at launch;
-    /// only effective in combination with --uitesting.
-    let loadN14NoDocFixture: Bool
-    /// When set, the app loads a known-detectable document fixture
-    /// (test-imageset/ti-doc-bw-no_rot-con_back.png) AND forces `cropState=false` in
-    /// UserDefaults so the editor opens for manual review of a successful detection. The
-    /// banner must be hidden. Read once at launch; only effective in combination with
-    /// --uitesting.
-    let loadN14DetectedDocFixture: Bool
     /// When set, initSettings overrides the install-default `autoShot=true` and
     /// `borderDetector=true` to `false` so camera UI tests do not race the SDK's
     /// auto-capture pipeline. Without this, opening the camera (even without tapping the
@@ -99,14 +78,6 @@ final class AppEnvironment: ObservableObject {
     /// under `--uitesting-font-handling <mode>`. Read once at launch.
     let fontHandlingOverride: FontHandlingMode?
 
-    /// Bridge harness output: `true` once the regression harness has executed end-to-end.
-    /// Defaults to `false` so a never-ran state cannot false-pass the test's assertion that
-    /// the harness body actually ran.
-    @Published var n15HarnessDidRun: Bool = false
-    /// Bridge harness output: the `cnt` returned by `[[PxCutout new] getPoints:]`. Expected
-    /// to be `0` — a default-constructed cutout throws at the engine, and
-    /// `PxCutout.mm:-getPoints:` catches it and returns `cnt = 0`.
-    @Published var n15HarnessGetPointsCount: Int = 0
 
     private init() {
         let args = ProcessInfo.processInfo.arguments
@@ -119,12 +90,8 @@ final class AppEnvironment: ObservableObject {
             .split(separator: ",")
             .map { String($0).trimmingCharacters(in: .whitespaces) }
             .filter { !$0.isEmpty } ?? []
-        runPdfReproducer = args.contains("--uitesting-debug-pdf-reproducer")
         fontHandlingOverride = FontHandlingMode(rawValue:
             Self.value(after: "--uitesting-font-handling", in: args) ?? "")
-        runN15InvariantHarness = args.contains("--uitesting-n15-invariant-harness")
-        loadN14NoDocFixture = args.contains("--uitesting-n14-no-doc")
-        loadN14DetectedDocFixture = args.contains("--uitesting-n14-detected-doc")
         cameraDefaultsOff = args.contains("--uitesting-camera-defaults-off")
         loadFixtureIndex = Self.value(after: "--uitesting-load-fixture", in: args).flatMap { Int($0) }
         saveFormatOverride = Self.value(after: "--uitesting-save-format", in: args).flatMap { Int($0) }

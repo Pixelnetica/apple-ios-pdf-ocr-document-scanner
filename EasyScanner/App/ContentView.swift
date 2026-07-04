@@ -69,11 +69,11 @@ struct ContentView: View {
             } )
         }.fullScreenCover( isPresented: $showCamera ) {
             // Adoption of the SDK-UI camera screen. Settings persistence is
-            // the consumer's concern: seed the held configuration from
-            // UserDefaults at present-time, and on close persist the toggle
-            // state the camera reported back (so torch on/off is remembered
-            // across sessions).
-            PxUiCameraScreenView( configuration: makeCameraConfiguration() ) { result in
+            // the consumer's concern: the held configuration is seeded from
+            // UserDefaults in the camera-open action (seedCameraConfiguration),
+            // and on close the toggle state the camera reported back is
+            // persisted (so torch on/off is remembered across sessions).
+            PxUiCameraScreenView( configuration: cameraConfiguration ) { result in
                 showCamera = false
                 persistCameraConfiguration()
                 switch result {
@@ -137,15 +137,10 @@ struct ContentView: View {
         }
         .onAppear {
             auditFixtures()
-            if appEnv.isUITesting {
-                if appEnv.loadN14NoDocFixture {
-                    ContentModel.inst.loadN14NoDocFixture()
-                } else if appEnv.loadN14DetectedDocFixture {
-                    ContentModel.inst.loadUITestFixture(index: 0)
-                } else if let index = appEnv.loadFixtureIndex {
-                    // Load a fixture directly, bypassing the picker Menu, for OCR tests.
-                    ContentModel.inst.loadUITestFixture(index: index)
-                }
+            guard appEnv.isUITesting else { return }
+            if let index = appEnv.loadFixtureIndex {
+                // Load a fixture directly, bypassing the picker Menu, for OCR tests.
+                ContentModel.inst.loadUITestFixture(index: index)
             }
         }
 	}
@@ -175,7 +170,7 @@ struct ContentView: View {
 
                 Spacer()
 
-                ToolbarButton( imageName:"ic_camera", dualMode: true, a11yID: A11yID.ContentView.cameraToggleButton, action: { AppAnalytics.log( .scanStarted( source: .camera ) ); showCamera = true } )
+                ToolbarButton( imageName:"ic_camera", dualMode: true, a11yID: A11yID.ContentView.cameraToggleButton, action: { AppAnalytics.log( .scanStarted( source: .camera ) ); seedCameraConfiguration(); showCamera = true } )
 
                 Spacer()
             }
@@ -210,14 +205,18 @@ struct ContentView: View {
         }
     }
 
-    // Seeds the held camera configuration from UserDefaults at
-    // present-time and returns it for the camera screen.
-    private func makeCameraConfiguration() -> PxUiCameraScreenConfiguration {
+    // Seeds the held camera configuration from UserDefaults. Call this once
+    // from the camera-open action (below) — NOT from the fullScreenCover
+    // content builder. Seeding inside the builder ran again on every SwiftUI
+    // re-render while the camera was open, so a re-render mid-session re-read
+    // the old UserDefaults values and overwrote a torch change made in the
+    // camera before it could be persisted on close. Seeding at open time makes
+    // it a single deterministic snapshot per presentation.
+    private func seedCameraConfiguration() {
         cameraConfiguration.borderDetectorOn = UserDefaults.standard.bool( forKey: "borderDetector" )
         cameraConfiguration.autoshotOn       = UserDefaults.standard.bool( forKey: "autoShot" )
         cameraConfiguration.autoshotDelay    = UserDefaults.standard.float( forKey: "DelayValue" )
         cameraConfiguration.torchOn          = UserDefaults.standard.bool( forKey: "torchState" )
-        return cameraConfiguration
     }
 
     // Persists the toggle state the camera reported back on close, so the
@@ -269,10 +268,6 @@ struct ContentView: View {
                 .accessibilityIdentifier( A11yID.UITesting.savedFilePdfMagicValid )
             Text( verbatim: String( appEnv.savedFilePdfTextChars ) )
                 .accessibilityIdentifier( A11yID.UITesting.savedFilePdfTextChars )
-            Text( verbatim: appEnv.n15HarnessDidRun ? "1" : "0" )
-                .accessibilityIdentifier( A11yID.UITesting.n15HarnessDidRun )
-            Text( verbatim: String( appEnv.n15HarnessGetPointsCount ) )
-                .accessibilityIdentifier( A11yID.UITesting.n15HarnessGetPointsCount )
         }
         .foregroundColor( .clear )
         .frame( maxWidth: 1, maxHeight: 1, alignment: .topLeading )

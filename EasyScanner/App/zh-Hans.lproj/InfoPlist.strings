@@ -1,0 +1,4 @@
+/* Localized OS permission prompts (Info.plist NS*UsageDescription). */
+
+"NSCameraUsageDescription" = "使用相机扫描文档图像。";
+"NSPhotoLibraryUsageDescription" = "访问照片图库以扫描文档。";

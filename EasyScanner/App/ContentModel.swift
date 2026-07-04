@@ -31,10 +31,8 @@ enum WriteFailureReason: Error {
     case txtWriteFailed( path: String, message: String )
 }
 
-// One-shot session warning when bundled fonts are absent. Shared by
-// ContentModel and PdfReproducer: exactly one log line per app session
-// regardless of how many PDFs are exported across either entry point.
-// Module-internal so PdfReproducer can call it.
+// One-shot session warning when bundled fonts are absent: exactly one log
+// line per app session regardless of how many PDFs are exported.
 enum PxFontGuard {
     nonisolated(unsafe) static var fontWarningLogged = false
 
@@ -189,24 +187,6 @@ final class ContentModel: NSObject, ObservableObject {
         loadPhoto( data, nil )
     }
 
-    /// Synthesises a solid-white 1024x1024 image and feeds it through `loadPhoto`
-    /// as if it came from the photo library. The SDK detector returns
-    /// `isDefined == false` on a plain image, so the editor opens with a
-    /// full-image fallback cutout and the no-document banner is shown.
-    public func loadN14NoDocFixture() {
-        let size = CGSize(width: 1024, height: 1024)
-        UIGraphicsBeginImageContextWithOptions(size, true, 1.0)
-        defer { UIGraphicsEndImageContext() }
-        UIColor.white.setFill()
-        UIRectFill(CGRect(origin: .zero, size: size))
-        guard let image = UIGraphicsGetImageFromCurrentImageContext(),
-              let data = image.pngData() else {
-            showAlert(title: "photo-image-load-error", message: "n14 fixture: failed to synthesise image")
-            return
-        }
-        lastFixtureStem = "n14-no-doc"
-        loadPhoto(data, nil)
-    }
 
     public func loadImage( _ image: UIImage?, cutout: PxCutout ) {
         guard let image = image else {
@@ -490,7 +470,9 @@ final class ContentModel: NSObject, ObservableObject {
              .txtWriteFailed( let path, let message ):
             showError( "share-write-error", path, message )
         case .writerReturnedNil( let path, _ ):
-            showError( "share-write-error", path, "writer returned nil" )
+            // No underlying error accompanies a nil writer result, so show a
+            // localized generic detail rather than an English literal.
+            showError( "share-write-error", path, "generic-unknown-error".localized )
         }
     }
 

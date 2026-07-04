@@ -1,0 +1,4 @@
+/* Localized OS permission prompts (Info.plist NS*UsageDescription). */
+
+"NSCameraUsageDescription" = "L'appareil photo est utilisé pour numériser des documents.";
+"NSPhotoLibraryUsageDescription" = "Accès à la photothèque pour numériser des documents.";

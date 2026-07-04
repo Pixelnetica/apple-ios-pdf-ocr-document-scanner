@@ -1,0 +1,4 @@
+/* Localized OS permission prompts (Info.plist NS*UsageDescription). */
+
+"NSCameraUsageDescription" = "La fotocamera viene usata per scansionare i documenti.";
+"NSPhotoLibraryUsageDescription" = "Accesso alla libreria foto per scansionare i documenti.";

@@ -97,11 +97,5 @@ enum A11yID {
         // Character count of selectable text in the saved PDF (via PDFKit).
         // Zero = image-only PDF (no text layer); > 0 = text layer present.
         static let savedFilePdfTextChars = "uitesting.savedFilePdfTextChars"
-        // didRun is exposed as a "1" / "0" string so the test can read it via .label
-        // like every other mirror here. The sentinel distinguishes "harness never
-        // executed" (label absent) from "harness ran and produced a zero count",
-        // guarding against a false pass when the test runner skips the harness.
-        static let n15HarnessDidRun = "uitesting.n15HarnessDidRun"
-        static let n15HarnessGetPointsCount = "uitesting.n15HarnessGetPointsCount"
     }
 }

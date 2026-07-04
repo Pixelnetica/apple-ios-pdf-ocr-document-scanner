@@ -15,14 +15,14 @@
 		199E3C202972240300EDBB41 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E3C1F2972240300EDBB41 /* MyColor.swift */; };
 		199E3C24297422CA00EDBB41 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E3C23297422CA00EDBB41 /* AboutView.swift */; };
 		199E3C2629742EE900EDBB41 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E3C2529742EE800EDBB41 /* ImagePicker.swift */; };
-		19A14020267A0000002ACD26 /* PxUiStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A14021267A0000002ACD26 /* PxUiStrings.strings */; };
+		19A14020267A0000002ACD26 /* PxUiStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = E50000000000000000000001 /* PxUiStrings.strings */; };
 		19A4138029D84139004AFF9B /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A4137F29D84139004AFF9B /* OCRModel.swift */; };
 		19AD7B27298E6A3E008D047C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD7B26298E6A3E008D047C /* ShareSheet.swift */; };
 		19AD7B28298E9606008D047C /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 19AD7B1E298DF7BA008D047C /* license.txt */; };
 		19AD7B2C298EAE12008D047C /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD7B2B298EAE12008D047C /* ContentModel.swift */; };
 		19B08CD129CEE8690031EFBD /* ColorProfileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B08CD029CEE8690031EFBD /* ColorProfileChooser.swift */; };
 		19B08CD929D139190031EFBD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B08CD829D139190031EFBD /* SettingsView.swift */; };
-		19B08CDD29D15D8D0031EFBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19B08CDC29D15D8D0031EFBD /* Localizable.strings */; };
+		19B08CDD29D15D8D0031EFBD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 19B08CDC29D15D8D0031EFBD /* Localizable.xcstrings */; };
 		19D5535F285EA09600046580 /* EasyScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5535E285EA09600046580 /* EasyScannerApp.swift */; };
 		19D55363285EA09800046580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D55362285EA09800046580 /* Assets.xcassets */; };
 		19D55366285EA09800046580 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D55365285EA09800046580 /* Preview Assets.xcassets */; };
@@ -30,9 +30,9 @@
 		19F9FADD2F8ADD9C00A8F14F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 19F9FADC2F8ADD8D00A8F14F /* Fonts */; };
 		19FA010000000000000000A3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA010000000000000000A2 /* AppEnvironment.swift */; };
 		19FA010000000000000000A5 /* A11yID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA010000000000000000A4 /* A11yID.swift */; };
-		19FA010000000000000000B3 /* PdfReproducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA010000000000000000B2 /* PdfReproducer.swift */; };
 		19FB010000000000000000D5 /* A11yID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA010000000000000000A4 /* A11yID.swift */; };
 		561C3FB00DDB48A46B451BDE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B79686F65EF8ED9C71142671 /* PrivacyInfo.xcprivacy */; };
+		E50000000000000000000010 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E50000000000000000000009 /* InfoPlist.strings */; };
 		EE26DE000000000000000002 /* OCRLanguagePickerSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26DE000000000000000001 /* OCRLanguagePickerSupport.swift */; };
 		FA0055A200000000000055A2 /* third-party-notices.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA0055A100000000000055A1 /* third-party-notices.txt */; };
 		FBC6B6C0C768B2910E43815A /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C05F456B4AFECC53133970 /* AnalyticsService.swift */; };
@@ -60,7 +60,6 @@
 		199E3C1F2972240300EDBB41 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		199E3C23297422CA00EDBB41 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		199E3C2529742EE800EDBB41 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		19A14021267A0000002ACD26 /* PxUiStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = PxUiStrings.strings; sourceTree = "<group>"; };
 		19A4137F29D84139004AFF9B /* OCRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
 		19AD7B1E298DF7BA008D047C /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		19AD7B25298E2E0E008D047C /* DocScanningSDK-Demo-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocScanningSDK-Demo-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -69,7 +68,7 @@
 		19AD7B2D2990B420008D047C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		19B08CD029CEE8690031EFBD /* ColorProfileChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProfileChooser.swift; sourceTree = "<group>"; };
 		19B08CD829D139190031EFBD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		19B08CDC29D15D8D0031EFBD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		19B08CDC29D15D8D0031EFBD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		19D5535B285EA09600046580 /* EasyScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D5535E285EA09600046580 /* EasyScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScannerApp.swift; sourceTree = "<group>"; };
 		19D55362285EA09800046580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,9 +77,21 @@
 		19F9FADC2F8ADD8D00A8F14F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		19FA010000000000000000A2 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		19FA010000000000000000A4 /* A11yID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yID.swift; sourceTree = "<group>"; };
-		19FA010000000000000000B2 /* PdfReproducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfReproducer.swift; sourceTree = "<group>"; };
 		B79686F65EF8ED9C71142671 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D1C05F456B4AFECC53133970 /* AnalyticsService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		E50000000000000000000002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PxUiStrings.strings; sourceTree = "<group>"; };
+		E50000000000000000000003 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PxUiStrings.strings; sourceTree = "<group>"; };
+		E50000000000000000000004 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/PxUiStrings.strings; sourceTree = "<group>"; };
+		E50000000000000000000005 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/PxUiStrings.strings; sourceTree = "<group>"; };
+		E50000000000000000000006 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/PxUiStrings.strings; sourceTree = "<group>"; };
+		E50000000000000000000007 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PxUiStrings.strings"; sourceTree = "<group>"; };
+		E50000000000000000000008 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/PxUiStrings.strings; sourceTree = "<group>"; };
+		E5000000000000000000000A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5000000000000000000000B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5000000000000000000000C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5000000000000000000000D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5000000000000000000000E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E5000000000000000000000F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EE26DE000000000000000001 /* OCRLanguagePickerSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRLanguagePickerSupport.swift; sourceTree = "<group>"; };
 		FA0055A100000000000055A1 /* third-party-notices.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "third-party-notices.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +130,9 @@
 				19AD7B2D2990B420008D047C /* Info.plist */,
 				19AD7B1E298DF7BA008D047C /* license.txt */,
 				FA0055A100000000000055A1 /* third-party-notices.txt */,
-				19B08CDC29D15D8D0031EFBD /* Localizable.strings */,
-				19A14021267A0000002ACD26 /* PxUiStrings.strings */,
+				19B08CDC29D15D8D0031EFBD /* Localizable.xcstrings */,
+				E50000000000000000000001 /* PxUiStrings.strings */,
+				E50000000000000000000009 /* InfoPlist.strings */,
 				19D55362285EA09800046580 /* Assets.xcassets */,
 				19F9FADC2F8ADD8D00A8F14F /* Fonts */,
 				19D55364285EA09800046580 /* Preview Content */,
@@ -143,7 +155,6 @@
 				1901BE7B29CCD05D004124D0 /* Utils.swift */,
 				19FA010000000000000000A2 /* AppEnvironment.swift */,
 				19FA010000000000000000A4 /* A11yID.swift */,
-				19FA010000000000000000B2 /* PdfReproducer.swift */,
 				D3789128225FC29B3A12DF8E /* Analytics */,
 				B79686F65EF8ED9C71142671 /* PrivacyInfo.xcprivacy */,
 			);
@@ -220,10 +231,16 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
+				es,
+				fr,
+				it,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 19D55352285EA09600046580;
 			packageReferences = (
-				244B7ABA74AD6385CDA78B6E /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */,
+				B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */,
 			);
 			productRefGroup = 19D5535C285EA09600046580 /* Products */;
 			projectDirPath = "";
@@ -242,8 +259,9 @@
 				19F9FADD2F8ADD9C00A8F14F /* Fonts in Resources */,
 				19AD7B28298E9606008D047C /* license.txt in Resources */,
 				FA0055A200000000000055A2 /* third-party-notices.txt in Resources */,
-				19B08CDD29D15D8D0031EFBD /* Localizable.strings in Resources */,
+				19B08CDD29D15D8D0031EFBD /* Localizable.xcstrings in Resources */,
 				19A14020267A0000002ACD26 /* PxUiStrings.strings in Resources */,
+				E50000000000000000000010 /* InfoPlist.strings in Resources */,
 				19D55366285EA09800046580 /* Preview Assets.xcassets in Resources */,
 				19D55363285EA09800046580 /* Assets.xcassets in Resources */,
 				561C3FB00DDB48A46B451BDE /* PrivacyInfo.xcprivacy in Resources */,
@@ -275,12 +293,41 @@
 				1901BE7C29CCD05D004124D0 /* Utils.swift in Sources */,
 				19FA010000000000000000A3 /* AppEnvironment.swift in Sources */,
 				19FA010000000000000000A5 /* A11yID.swift in Sources */,
-				19FA010000000000000000B3 /* PdfReproducer.swift in Sources */,
 				FBC6B6C0C768B2910E43815A /* AnalyticsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E50000000000000000000001 /* PxUiStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E50000000000000000000002 /* en */,
+				E50000000000000000000003 /* de */,
+				E50000000000000000000004 /* es */,
+				E50000000000000000000005 /* fr */,
+				E50000000000000000000006 /* it */,
+				E50000000000000000000007 /* zh-Hans */,
+				E50000000000000000000008 /* ja */,
+			);
+			name = PxUiStrings.strings;
+			sourceTree = "<group>";
+		};
+		E50000000000000000000009 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5000000000000000000000A /* de */,
+				E5000000000000000000000B /* es */,
+				E5000000000000000000000C /* fr */,
+				E5000000000000000000000D /* it */,
+				E5000000000000000000000E /* zh-Hans */,
+				E5000000000000000000000F /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		19D55367285EA09800046580 /* Debug */ = {
@@ -428,7 +475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -468,7 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -506,7 +553,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		244B7ABA74AD6385CDA78B6E /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */ = {
+		B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Pixelnetica/DocScanningSDK-iOS";
 			requirement = {
@@ -519,12 +566,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		A90000000000000000000002 /* DocScanningSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 244B7ABA74AD6385CDA78B6E /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
+			package = B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
 			productName = DocScanningSDK;
 		};
 		A90000000000000000000003 /* DocScanningSDK-UI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 244B7ABA74AD6385CDA78B6E /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
+			package = B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
 			productName = "DocScanningSDK-UI";
 		};
 /* End XCSwiftPackageProductDependency section */

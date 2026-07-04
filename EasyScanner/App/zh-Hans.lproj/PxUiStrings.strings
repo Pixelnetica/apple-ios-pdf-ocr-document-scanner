@@ -1,0 +1,18 @@
+/* Demo-side override for the SDK-UI screen strings.
+   Wins over the framework default via the SDK-UI two-stage lookup
+   (Bundle.main first). Keys mirror the framework's PxUiStrings table;
+   localize the values to localize the SDK-UI screens from the app bundle. */
+
+"camera-init-failed" = "相机初始化失败！";
+"camera-label-searching" = "正在查找文档";
+"camera-label-too-far" = "请让相机靠近文档";
+"camera-label-too-distored" = "请让相机与文档保持平行";
+"camera-label-capturing" = "请保持不动，正在拍摄…";
+"camera-label-manual-focus" = "已启用手动对焦并拍摄";
+"image-editor-title" = "页面编辑器";
+"editor-banner-no-document-detected" = "未检测到文档。请手动调整边角。";
+"ocr-languages" = "语言";
+"ocr-select-languages-desc" = "选择并排列可用的识别语言。主要识别语言应排在首位。";
+"ocr-avaiable-languages" = "可用语言";
+"ocr-no-languages-installed" = "未安装识别语言";
+"ocr-search-languages" = "搜索语言";

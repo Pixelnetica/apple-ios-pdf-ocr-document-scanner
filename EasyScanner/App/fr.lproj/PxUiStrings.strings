@@ -1,0 +1,18 @@
+/* Demo-side override for the SDK-UI screen strings.
+   Wins over the framework default via the SDK-UI two-stage lookup
+   (Bundle.main first). Keys mirror the framework's PxUiStrings table;
+   localize the values to localize the SDK-UI screens from the app bundle. */
+
+"camera-init-failed" = "Échec de l'initialisation de l'appareil photo !";
+"camera-label-searching" = "Recherche du document";
+"camera-label-too-far" = "Rapprochez l'appareil du document";
+"camera-label-too-distored" = "Tenez l'appareil parallèle au document";
+"camera-label-capturing" = "Ne bougez plus, capture…";
+"camera-label-manual-focus" = "Mise au point manuelle et capture activées";
+"image-editor-title" = "Éditeur de page";
+"editor-banner-no-document-detected" = "Aucun document détecté. Positionnez les coins manuellement.";
+"ocr-languages" = "Langues";
+"ocr-select-languages-desc" = "Sélectionnez et classez les langues de reconnaissance disponibles. La langue de reconnaissance principale doit figurer en premier.";
+"ocr-avaiable-languages" = "Langues disponibles";
+"ocr-no-languages-installed" = "Aucune langue de reconnaissance installée";
+"ocr-search-languages" = "Rechercher des langues";

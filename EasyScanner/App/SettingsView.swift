@@ -5,6 +5,7 @@
 // incorporate it into applications that integrate the SDK. Provided
 // "as is", without warranty of any kind.
 
+import AVFoundation
 import DocScanningSDK_UI
 import SwiftUI
 
@@ -25,11 +26,19 @@ struct SettingsView: View {
 
     // Autoshot delay persists through the same uniform @AppStorage path
     // as the other camera prefs. The camera reader takes it back as a
-    // Float (ContentView.makeCameraConfiguration); UserDefaults coerces
+    // Float (ContentView.seedCameraConfiguration); UserDefaults coerces
     // the stored Double, matching the app's own 0.7 Double seed.
     @AppStorage("DelayValue") private var autoshotDelay: Double = 0.7
 
     @State private var languagesShown = false
+
+    // A torch (rear flash) is hardware that not every device has — some iPads,
+    // for example, have no rear flash. Query the back camera once; reading
+    // hasTorch needs neither a capture session nor camera permission. If the
+    // device has no torch the setting below is disabled, so the user is not
+    // offered a control that would do nothing.
+    private let deviceHasTorch =
+        AVCaptureDevice.default( .builtInWideAngleCamera, for: .video, position: .back )?.hasTorch ?? false
 
     var body: some View {
         NavigationStack {
@@ -77,6 +86,7 @@ struct SettingsView: View {
                         .accessibilityIdentifier( A11yID.Settings.autoShotDelaySlider )
                     Toggle( "settings-camera-torch-on", isOn: $torchOn )
                         .accessibilityIdentifier( A11yID.Settings.torchToggle )
+                        .disabled( !deviceHasTorch )
                 } header: {
                     Text( "settings-camera" )
                 }

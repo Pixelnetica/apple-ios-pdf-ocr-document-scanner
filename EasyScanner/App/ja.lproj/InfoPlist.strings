@@ -1,0 +1,4 @@
+/* Localized OS permission prompts (Info.plist NS*UsageDescription). */
+
+"NSCameraUsageDescription" = "書類のスキャンにカメラを使用します。";
+"NSPhotoLibraryUsageDescription" = "書類をスキャンするためにフォトライブラリにアクセスします。";
