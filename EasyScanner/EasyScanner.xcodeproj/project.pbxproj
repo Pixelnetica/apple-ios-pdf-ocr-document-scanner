@@ -240,7 +240,7 @@
 			);
 			mainGroup = 19D55352285EA09600046580;
 			packageReferences = (
-				B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */,
+				FE2C298A9990141E3BDBAEEF /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */,
 			);
 			productRefGroup = 19D5535C285EA09600046580 /* Products */;
 			projectDirPath = "";
@@ -475,7 +475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -515,7 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -553,7 +553,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */ = {
+		FE2C298A9990141E3BDBAEEF /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Pixelnetica/DocScanningSDK-iOS";
 			requirement = {
@@ -566,12 +566,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		A90000000000000000000002 /* DocScanningSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
+			package = FE2C298A9990141E3BDBAEEF /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
 			productName = DocScanningSDK;
 		};
 		A90000000000000000000003 /* DocScanningSDK-UI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5B266DF2326D0FE0CD54462 /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
+			package = FE2C298A9990141E3BDBAEEF /* XCRemoteSwiftPackageReference "DocScanningSDK-iOS" */;
 			productName = "DocScanningSDK-UI";
 		};
 /* End XCSwiftPackageProductDependency section */
